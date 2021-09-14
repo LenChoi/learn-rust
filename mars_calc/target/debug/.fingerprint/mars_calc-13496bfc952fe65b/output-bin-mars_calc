@@ -1,0 +1,19 @@
+thread 'rustc' panicked at 'found unstable fingerprints for predicates_of(core[7cda]::ops::function::Fn): GenericPredicates { parent: None, predicates: [(Binder(TraitPredicate(<Self as std::ops::FnMut<Args>>)), /Users/labs/.rustup/toolchains/1.52.0-x86_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs:67:21: 67:32 (#0)), (Binder(TraitPredicate(<Args as std::marker::Sized>)), /Users/labs/.rustup/toolchains/1.52.0-x86_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs:67:14: 67:18 (#0)), (Binder(TraitPredicate(<Self as std::ops::Fn<Args>>)), /Users/labs/.rustup/toolchains/1.52.0-x86_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs:67:1: 67:32 (#0))] }', /rustc/88f19c6dab716c6281af7602e30f413e809c5974/compiler/rustc_query_system/src/query/plumbing.rs:593:5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+error: internal compiler error: unexpected panic
+
+note: the compiler unexpectedly panicked. this is a bug.
+
+note: we would appreciate a bug report: https://github.com/rust-lang/rust/issues/new?labels=C-bug%2C+I-ICE%2C+T-compiler&template=ice.md
+
+note: rustc 1.52.0 (88f19c6da 2021-05-03) running on x86_64-apple-darwin
+
+note: compiler flags: -C embed-bitcode=no -C debuginfo=2 -C incremental --crate-type bin
+
+note: some of the compiler flags provided by cargo are hidden
+
+query stack during panic:
+#0 [predicates_of] computing predicates of `std::ops::Fn`
+#1 [vtable_methods] finding all methods for trait std::ops::Fn
+end of query stack
